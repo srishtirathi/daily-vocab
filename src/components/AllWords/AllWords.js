@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
-const Home = ({ Vocab }) => (
+const AllWords = ({ Vocab }) => (
   <div>
     <h1>welcome back</h1>
     {
@@ -20,4 +20,12 @@ const Home = ({ Vocab }) => (
   </div>
 );
 
-export default Home;
+const vocabShape = {
+  map: PropTypes.func.isRequired,
+};
+
+AllWords.propTypes = {
+
+  Vocab: PropTypes.arrayOf(PropTypes.shape(vocabShape)).isRequired,
+};
+export default AllWords;
