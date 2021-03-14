@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Card.module.css';
 
 const Card = ({ vocab }) => (
@@ -14,5 +13,14 @@ const Card = ({ vocab }) => (
 
   </div>
 );
+
+Card.propTypes = {
+
+  vocab: PropTypes.shape({
+    word: PropTypes.string.isRequired,
+    sentence: PropTypes.string.isRequired,
+
+  }).isRequired,
+};
 
 export default Card;
