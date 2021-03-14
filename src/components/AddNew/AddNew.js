@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import './AddNew.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import styles from './AddNew.module.css';
 
 const AddNew = ({ addNewVocab }) => {
   const [word, setWord] = useState('');
@@ -13,7 +13,7 @@ const AddNew = ({ addNewVocab }) => {
     alert('Hurray ! Your word is added');
   };
   return (
-    <div>
+    <div className={styles.addnew}>
       <h1>Add a new word</h1>
       <div>
         <form onSubmit={onSubmitHandler}>

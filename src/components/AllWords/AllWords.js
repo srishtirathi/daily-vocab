@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
+import styles from './AllWords.module.css';
 
 const AllWords = ({ Vocab }) => (
-  <div>
+  <div className={styles.allwords}>
     <h1>welcome back</h1>
     {
       Vocab.map((vocab) => (
