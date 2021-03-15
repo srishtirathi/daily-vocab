@@ -6,7 +6,7 @@ import styles from './AllWords.module.css';
 
 const AllWords = ({ Vocab }) => (
   <div className={styles.allwords}>
-    <h1>welcome back</h1>
+    <h1>Welcome Back</h1>
     {
       Vocab.map((vocab) => (
         <div key={vocab}>
@@ -16,8 +16,8 @@ const AllWords = ({ Vocab }) => (
       ))
     }
 
-    <Link to="/"><button type="button">Go Back</button></Link>
-    <Link to="/new-word"><button type="button">Add New Word</button></Link>
+    <Link to="/"><button type="button" className={styles.allwordsButton}>Go Back</button></Link>
+    <Link to="/new-word"><button type="button" className={styles.allwordsButton}>Add New Word</button></Link>
   </div>
 );
 

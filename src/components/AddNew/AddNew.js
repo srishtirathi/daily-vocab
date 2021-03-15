@@ -13,17 +13,19 @@ const AddNew = ({ addNewVocab }) => {
     alert('Hurray ! Your word is added');
   };
   return (
-    <div className={styles.addnew}>
+    <div className={styles.addnewCard}>
       <h1>Add a new word</h1>
-      <div>
+      <div className={styles.formCard}>
         <form onSubmit={onSubmitHandler}>
           <label>Word</label>
           <input type="text" value={word} name="word" onChange={(event) => { setWord(event.target.value); }} required placeholder="Enter new word" />
-
+          <br />
           <label>Sentence</label>
           <input type="text" value={sentence} name="sentence" onChange={(event) => { setSentence(event.target.value); }} required placeholder="Enter the sentence" />
-
+          <br />
+          <br />
           <input type="submit" value="Submit" />
+          <br />
         </form>
       </div>
       <Link to="/allwords"><button type="button">Go Back</button></Link>
