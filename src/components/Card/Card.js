@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Card.module.css';
 
 const Card = ({ vocab }) => (
-  <div className={styles.card}>
+  <div data-testid="card" className={styles.card}>
 
     <div className={styles.container}>
 

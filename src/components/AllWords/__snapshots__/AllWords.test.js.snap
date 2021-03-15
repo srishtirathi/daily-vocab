@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllWords should match snapshot 1`] = `
+<div>
+  <div
+    class="allwords"
+  >
+    <h1>
+      Welcome Back
+    </h1>
+    <div>
+      <div
+        class="card"
+        data-testid="card"
+      >
+        <div
+          class="container"
+        >
+          <h4>
+            <b>
+              hi
+            </b>
+          </h4>
+          <p>
+            hii srishti
+          </p>
+        </div>
+      </div>
+    </div>
+    <a
+      href="/"
+    >
+      <button
+        class="allwordsButton"
+        type="button"
+      >
+        Go Back
+      </button>
+    </a>
+    <a
+      href="/new-word"
+    >
+      <button
+        class="allwordsButton"
+        type="button"
+      >
+        Add New Word
+      </button>
+    </a>
+  </div>
+</div>
+`;
