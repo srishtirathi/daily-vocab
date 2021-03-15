@@ -18,10 +18,10 @@ const AddNew = ({ addNewVocab }) => {
       <div className={styles.formCard}>
         <form onSubmit={onSubmitHandler}>
           <label>Word</label>
-          <input type="text" value={word} name="word" onChange={(event) => { setWord(event.target.value); }} required placeholder="Enter new word" />
+          <input data-testid="word" type="text" value={word} name="word" onChange={(event) => { setWord(event.target.value); }} required placeholder="Enter new word" />
           <br />
           <label>Sentence</label>
-          <input type="text" value={sentence} name="sentence" onChange={(event) => { setSentence(event.target.value); }} required placeholder="Enter the sentence" />
+          <input data-testid="sentence" type="text" value={sentence} name="sentence" onChange={(event) => { setSentence(event.target.value); }} required placeholder="Enter the sentence" />
           <br />
           <br />
           <input type="submit" value="Submit" />

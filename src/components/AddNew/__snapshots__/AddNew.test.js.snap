@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNew should match snapshot 1`] = `
+<div>
+  <div
+    class="addnewCard"
+  >
+    <h1>
+      Add a new word
+    </h1>
+    <div
+      class="formCard"
+    >
+      <form>
+        <label>
+          Word
+        </label>
+        <input
+          data-testid="word"
+          name="word"
+          placeholder="Enter new word"
+          required=""
+          type="text"
+          value=""
+        />
+        <br />
+        <label>
+          Sentence
+        </label>
+        <input
+          data-testid="sentence"
+          name="sentence"
+          placeholder="Enter the sentence"
+          required=""
+          type="text"
+          value=""
+        />
+        <br />
+        <br />
+        <input
+          type="submit"
+          value="Submit"
+        />
+        <br />
+      </form>
+    </div>
+    <a
+      href="/allwords"
+    >
+      <button
+        type="button"
+      >
+        Go Back
+      </button>
+    </a>
+  </div>
+</div>
+`;
