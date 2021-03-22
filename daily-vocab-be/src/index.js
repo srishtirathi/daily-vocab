@@ -1,7 +1,7 @@
 const express = require('express');
 const env = require('dotenv');
 const { router } = require('./routes/health.route');
-const { vocabRoute } = require('');
+const { vocabRouter } = require('./routes/vocab.route');
 
 const app = express();
 env.config();
@@ -11,7 +11,7 @@ app.use(express.json());
 //   res.send('Welcome');
 // });
 app.use('/health', router);
-app.use('/vocab', vocabRoute);
+app.use('/vocab', vocabRouter);
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
