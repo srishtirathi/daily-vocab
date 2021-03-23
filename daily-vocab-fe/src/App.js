@@ -16,7 +16,6 @@ const App = () => {
   const [Vocab, setVocab] = useState([]);
   useEffect(async () => {
     const vocab = await getVocab();
-    // console.log(vocab);
     setVocab(vocab);
   }, []);
 
