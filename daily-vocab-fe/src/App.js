@@ -3,16 +3,23 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './components/Home/Home';
 import './App.css';
 import AllWords from './components/AllWords/AllWords';
 import AddNew from './components/AddNew/AddNew';
+import { getVocab, postVocab } from './utils/api';
 
 const App = () => {
   const [Vocab, setVocab] = useState([]);
+  useEffect(async () => {
+    const vocab = await getVocab();
+    // console.log(vocab);
+    setVocab(vocab);
+  }, []);
 
-  const addNewVocab = (newVocab) => {
+  const addNewVocab = async (newVocab) => {
+    await postVocab(newVocab);
     const updatedVocab = [...Vocab, newVocab];
     setVocab(updatedVocab);
   };
