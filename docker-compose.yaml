@@ -1,0 +1,35 @@
+version: "3"
+services:
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./daily-vocab-be
+    ports:
+      - 3000:80
+    depends_on: 
+      - backend
+
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./daily-vocab-fe
+    environment:
+      DB_USERNAME: postgres
+      DB_PASSWORD: mysecretpassword
+      DB_DATABASE: daily-vocab
+      DB_HOSTNAME: some-postgres
+      DB_PORT: 5432
+    ports:
+      - 1337:1337
+    depends_on: 
+      - some-postgres
+
+  some-postgres:
+    image: postgres
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports: 
+      - 5000:5432
+    environment: 
+      POSTGRES_PASSWORD: mysecretpassword
