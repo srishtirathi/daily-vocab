@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   BrowserRouter,
   Switch,
@@ -9,6 +10,7 @@ import './App.css';
 import AllWords from './components/AllWords/AllWords';
 import AddNew from './components/AddNew/AddNew';
 import { getVocab, postVocab } from './utils/api';
+import UpdateForm from './components/UpdateForm/UpdateForm';
 
 const App = () => {
   const [Vocab, setVocab] = useState([]);
@@ -37,6 +39,11 @@ const App = () => {
           <Route path="/new-word">
             <AddNew Vocab={Vocab} addNewVocab={addNewVocab} />
           </Route>
+
+          <Route path="/update">
+            <UpdateForm />
+          </Route>
+
           <Route>
             <Home path="/" exact />
           </Route>

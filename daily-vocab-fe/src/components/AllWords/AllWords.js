@@ -9,10 +9,11 @@ const AllWords = ({ Vocab }) => (
     <h1>Welcome Back</h1>
     {
       Vocab.map((vocab) => (
-        <div key={vocab}>
-
-          <Card vocab={vocab} />
-        </div>
+        <Link to="/update">
+          <div key={vocab}>
+            <Card vocab={vocab} />
+          </div>
+        </Link>
       ))
     }
 
