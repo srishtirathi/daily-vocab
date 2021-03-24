@@ -15,6 +15,7 @@ export const postVocab = async ({ word, sentence }) => {
   console.log(response);
 };
 
-export const updateVocab = async ({ word, sentence }) => {
-  const response = await axios.put('/vocab', { word, sentence });
+export const updateVocab = async ({ word, sentence, id }) => {
+  const response = await axios.put('/vocab', { word, sentence, id });
+  console.log('response', response);
 };

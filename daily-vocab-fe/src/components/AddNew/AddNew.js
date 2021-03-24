@@ -11,10 +11,13 @@ const AddNew = ({ addNewVocab, updateNewVocab }) => {
   const history = useHistory();
   const [word, setWord] = useState('');
   const [sentence, setSentence] = useState('');
+  const [id, setId] = useState('');
   useEffect(() => {
-    console.log(location.state.id);
     if (location.state.word) {
       setWord(location.state.word);
+    }
+    if (location.state.id) {
+      setId(location.state.id);
     }
     if (location.state.sentence) {
       setSentence(location.state.sentence);
@@ -22,7 +25,9 @@ const AddNew = ({ addNewVocab, updateNewVocab }) => {
   }, []);
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    addNewVocab({ word, sentence });
+    if (location.state.id) { updateNewVocab({ word, sentence, id }); } else {
+      addNewVocab({ word, sentence });
+    }
     alert('Hurray ! Your word is added');
     history.push('/');
   };

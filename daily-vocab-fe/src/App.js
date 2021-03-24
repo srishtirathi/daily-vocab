@@ -10,7 +10,6 @@ import './App.css';
 import AllWords from './components/AllWords/AllWords';
 import AddNew from './components/AddNew/AddNew';
 import { getVocab, postVocab, updateVocab } from './utils/api';
-import UpdateForm from './components/UpdateForm/UpdateForm';
 
 const App = () => {
   // change case
@@ -21,7 +20,9 @@ const App = () => {
   }, []);
   const updateNewVocab = async (newVocab) => {
     await updateVocab(newVocab);
+
     const updatedVocab = [...Vocab, newVocab];
+
     setVocab(updatedVocab);
   };
 
@@ -44,11 +45,6 @@ const App = () => {
           <Route path="/new-word">
             <AddNew Vocab={Vocab} addNewVocab={addNewVocab} updateNewVocab={updateNewVocab} />
           </Route>
-
-          <Route path="/update">
-            <UpdateForm />
-          </Route>
-
           <Route>
             <Home path="/" exact />
           </Route>

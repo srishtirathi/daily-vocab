@@ -20,5 +20,16 @@ const postVocabHandler = async (req, res) => {
     res.status(500).send();
   }
 };
+const updateVocabHandler = async (req, res) => {
+  try {
+    const { body } = req;
+    // send obj
+    const updatedVocab = await vocabServices.updateVocab(body.word, body.sentence, body.id);
 
-module.exports = { getAllVocab, postVocabHandler };
+    res.status(201).send(updatedVocab);
+  } catch (error) {
+    res.status(500).send();
+  }
+};
+
+module.exports = { getAllVocab, postVocabHandler, updateVocabHandler };

@@ -13,15 +13,15 @@ const createVocab = async (word, sentence) => {
   return createdTodo.dataValues;
 };
 
-const updateVocab = async (word, sentence) => {
+const updateVocab = async (word, sentence, id) => {
   const createdTodo = await Vocab.update(
     { word, sentence }, {
       where: {
-        word,
+        id,
       },
     },
   );
   return createdTodo.dataValues;
 };
 
-module.exports = { getAllVocab, createVocab };
+module.exports = { getAllVocab, createVocab, updateVocab };
