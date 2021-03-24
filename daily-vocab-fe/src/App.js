@@ -13,6 +13,7 @@ import { getVocab, postVocab } from './utils/api';
 import UpdateForm from './components/UpdateForm/UpdateForm';
 
 const App = () => {
+  // change case
   const [Vocab, setVocab] = useState([]);
   useEffect(async () => {
     const vocab = await getVocab();

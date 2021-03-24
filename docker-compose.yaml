@@ -4,16 +4,16 @@ services:
   frontend:
     build:
       dockerfile: Dockerfile
-      context: ./daily-vocab-be
+      context: ./daily-vocab-fe
     ports:
-      - 3000:80
+      - 3000:80 
     depends_on: 
       - backend
 
   backend:
     build:
       dockerfile: Dockerfile
-      context: ./daily-vocab-fe
+      context: ./daily-vocab-be
     environment:
       DB_USERNAME: postgres
       DB_PASSWORD: mysecretpassword
@@ -21,7 +21,7 @@ services:
       DB_HOSTNAME: some-postgres
       DB_PORT: 5432
     ports:
-      - 1337:1337
+      - 8080:8080
     depends_on: 
       - some-postgres
 

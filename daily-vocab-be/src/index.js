@@ -5,7 +5,7 @@ const { vocabRouter } = require('./routes/vocab.route');
 
 const app = express();
 env.config();
-const port = process.env.PORT || 1337;
+const port = process.env.PORT || 8000;
 app.use(express.json());
 // app.get('/', (req, res) => {
 //   res.send('Welcome');

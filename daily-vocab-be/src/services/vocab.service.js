@@ -1,7 +1,7 @@
 const { Vocab } = require('../models');
 
 const getAllVocab = async () => {
-  const vocabs = Vocab.findAll();
+  const vocabs = await Vocab.findAll();
   return vocabs;
 };
 

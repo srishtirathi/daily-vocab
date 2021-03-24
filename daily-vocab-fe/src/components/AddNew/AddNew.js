@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styles from './AddNew.module.css';
 
 const AddNew = ({ addNewVocab }) => {
+  const history = useHistory();
   const [word, setWord] = useState('');
   const [sentence, setSentence] = useState('');
   const onSubmitHandler = (event) => {
     event.preventDefault();
     addNewVocab({ word, sentence });
     alert('Hurray ! Your word is added');
+    history.push('/');
   };
   return (
     <div className={styles.addnewCard}>

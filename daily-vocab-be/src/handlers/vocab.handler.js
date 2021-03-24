@@ -12,7 +12,7 @@ const getAllVocab = async (req, res) => {
 const postVocabHandler = async (req, res) => {
   try {
     const { body } = req;
-
+    // send obj
     const createdVocab = await vocabServices.createVocab(body.word, body.sentence);
 
     res.status(201).send(createdVocab);
