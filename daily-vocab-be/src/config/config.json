@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "srishtirathi",
-    "password": null,
+    "username": "postgres",
+    "password": "mysecretpassword",
     "database": "daily-vocab",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "host": "some-postgres",
+    "dialect": "postgres",
+    "port":5432
   },
   "test": {
     "username": "root",
