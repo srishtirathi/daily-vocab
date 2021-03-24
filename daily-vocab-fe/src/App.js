@@ -20,8 +20,12 @@ const App = () => {
   }, []);
   const updateNewVocab = async (newVocab) => {
     await updateVocab(newVocab);
+    console.log(newVocab);
+    const updatedVocab = Vocab.filter((vocab) => vocab.id !== newVocab.id);
+    console.log(updatedVocab);
+    updatedVocab.push(newVocab);
 
-    const updatedVocab = [...Vocab, newVocab];
+    // updatedVocab = [...updateVocab, newVocab];
 
     setVocab(updatedVocab);
   };
