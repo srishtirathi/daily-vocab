@@ -9,7 +9,7 @@ import Home from './components/Home/Home';
 import './App.css';
 import AllWords from './components/AllWords/AllWords';
 import AddNew from './components/AddNew/AddNew';
-import { getVocab, postVocab } from './utils/api';
+import { getVocab, postVocab, updateVocab } from './utils/api';
 import UpdateForm from './components/UpdateForm/UpdateForm';
 
 const App = () => {
@@ -19,6 +19,11 @@ const App = () => {
     const vocab = await getVocab();
     setVocab(vocab);
   }, []);
+  const updateNewVocab = async (newVocab) => {
+    await updateVocab(newVocab);
+    const updatedVocab = [...Vocab, newVocab];
+    setVocab(updatedVocab);
+  };
 
   const addNewVocab = async (newVocab) => {
     await postVocab(newVocab);
@@ -37,7 +42,7 @@ const App = () => {
             <AllWords Vocab={Vocab} />
           </Route>
           <Route path="/new-word">
-            <AddNew Vocab={Vocab} addNewVocab={addNewVocab} />
+            <AddNew Vocab={Vocab} addNewVocab={addNewVocab} updateNewVocab={updateNewVocab} />
           </Route>
 
           <Route path="/update">

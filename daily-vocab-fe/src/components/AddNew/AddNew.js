@@ -1,13 +1,25 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import styles from './AddNew.module.css';
 
-const AddNew = ({ addNewVocab }) => {
+const AddNew = ({ addNewVocab, updateNewVocab }) => {
+  const location = useLocation();
   const history = useHistory();
   const [word, setWord] = useState('');
   const [sentence, setSentence] = useState('');
+  useEffect(() => {
+    console.log(location.state.id);
+    if (location.state.word) {
+      setWord(location.state.word);
+    }
+    if (location.state.sentence) {
+      setSentence(location.state.sentence);
+    }
+  }, []);
   const onSubmitHandler = (event) => {
     event.preventDefault();
     addNewVocab({ word, sentence });

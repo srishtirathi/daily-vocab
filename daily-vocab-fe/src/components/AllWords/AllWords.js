@@ -12,7 +12,13 @@ const AllWords = ({ Vocab }) => {
       <h1>Welcome Back</h1>
       {
         Vocab.map((vocab) => (
-          <button type="button">
+          <button
+            type="button"
+            onClick={() => history.push({
+              pathname: 'new-word',
+              state: { word: vocab.word, sentence: vocab.sentence, id: vocab.id },
+            })}
+          >
             <div key={vocab}>
               <Card vocab={vocab} />
             </div>
@@ -21,7 +27,17 @@ const AllWords = ({ Vocab }) => {
       }
 
       <Link to="/"><button type="button" className={styles.allwordsButton}>Go Back</button></Link>
-      <Link to="/new-word"><button type="button" className={styles.allwordsButton}>Add New Word</button></Link>
+      <button
+        type="button"
+        className={styles.allwordsButton}
+        onClick={() => history.push({
+          pathname: 'new-word',
+          state: { word: '', sentence: '' },
+        })}
+      >
+        Add New Word
+
+      </button>
     </div>
   );
 };
